@@ -4,7 +4,6 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 project(OpenXLSX)
 set(OPENXLSX_DEPENDENCIES ${CMAKE_CURRENT_BINARY_DIR}/dependencies)
-set(OPENXLSX_INSTALLDIR ${CMAKE_CURRENT_BINARY_DIR}/install)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
 
@@ -26,6 +25,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #=======================================================================================================================
 # Add build options
 #=======================================================================================================================
+
+option(OPENXLSX_INSTALLDIR "Directory to install OpenXLSX to" ${CMAKE_CURRENT_BINARY_DIR}/install)
 option(STATIC "Set to ON to build a static library instance of a shared library" OFF)
 option(CREATE_DOCS "Build library documentation (requires Doxygen and Graphviz/Dot to be installed)" ON)
 option(BUILD_SAMPLES "Build sample programs" ON)
